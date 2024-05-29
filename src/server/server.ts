@@ -37,7 +37,7 @@ app.use('/logs', logsRouter);
 app.use(express.static(path.resolve(__dirname, '../client/assets')));
 
 app.get('*', (_req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, 'build','index.html'));
+  res.sendFile(path.join(__dirname,'index.html'));
 });
 
 // global error handler

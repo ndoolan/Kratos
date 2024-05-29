@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const initialState: initialState = {
   isLoading: false,
-  currentUser: 'cutie', // update to userCreds or Id?
+  currentUser: undefined, // update to userCreds or Id?
   error: null,
   success: false,
 };
@@ -11,7 +11,7 @@ const initialState: initialState = {
 interface initialState {
   isLoading: boolean;
   currentUser: undefined | string;
-  error: any;
+  error: any; // update to specifc
   success: boolean;
 }
 
@@ -35,7 +35,6 @@ export const loginUser = createAsyncThunk(
         { loginCreds: loginCreds },
         { withCredentials: true } // we haven't been assigned the cookie at this point
       );
-      console.log('response data in UR', response);
       return response.data; // shouldn't we get an entire user obj from the DB
     } catch (error: any) {
       // fix type any :)
