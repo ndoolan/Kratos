@@ -6,7 +6,7 @@ import { Configuration as WepbackDevServerConfiguration } from 'webpack-dev-serv
 import Dotenv from 'dotenv-webpack';
 
 interface Configuration extends WebpackConfiguration {
-  devServer?: WepbackDevServerConfiguration;
+  xdevServer?: WepbackDevServerConfiguration;
 }
 
 const config: Configuration = {
@@ -56,12 +56,15 @@ const config: Configuration = {
   devServer: {
     static: {
       publicPath: '/',
-    //   directory: path.resolve(__dirname, 'client'),
+      directory: path.resolve(__dirname, './client/assets'),
     },
     historyApiFallback: true,
     proxy: [
       {
-        context: ['/api'],
+        context: [
+          '/auth/**',
+          '/logs/**',
+        ],
         target: 'http://localhost:3000',
         changeOrigin: true,
       },

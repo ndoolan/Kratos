@@ -39,6 +39,7 @@ app.use('/logs', logsRouter);
 app.use(express.static(path.resolve(__dirname, '../client/assets')));
 
 app.get('*', (_req: Request, res: Response) => {
+  console.log('hit??')
   res.sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
