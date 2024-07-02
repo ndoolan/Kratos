@@ -32,7 +32,7 @@ const NavBar = (): JSX.Element => {
           <Button bg="transparent" onClick={() => navigate('/')}>
             Home
           </Button>
-          <Button bg="transparent" onClick={() => navigate('/logs')}>
+          <Button bg="transparent" onClick={() => navigate('/logbook')}>
             Logs
           </Button>
           <Button bg="transparent" onClick={() => navigate('/metrics')}>

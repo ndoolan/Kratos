@@ -21,7 +21,7 @@ const App = (): JSX.Element => {
           <Route index path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/metrics" element={<Metrics />} />
-          <Route path="/logs" element={<Logs />} />
+          <Route path="/logbook" element={<Logs />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
