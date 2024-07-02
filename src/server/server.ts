@@ -7,6 +7,7 @@ import authRouter from './routes/authRouter';
 import logsRouter from './routes/logsRouter';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import historyApiFallback from 'connect-history-api-fallback';
 
 const app: Application = express();
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use(
   })
 );
 app.use(cookieParser());
+app.use(historyApiFallback())
 dotenv.config();
 
 const db: string = process.env.URI!;
@@ -37,7 +39,7 @@ app.use('/logs', logsRouter);
 app.use(express.static(path.resolve(__dirname, '../client/assets')));
 
 app.get('*', (_req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname,'index.html'));
+  res.sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
 // global error handler

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const initialState: initialState = {
   isLoading: false,
-  currentUser: undefined, // update to userCreds or Id?
+  currentUser: 'cutie', // update to userCreds or Id?
   error: null,
   success: false,
 };

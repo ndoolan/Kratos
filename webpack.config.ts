@@ -55,14 +55,13 @@ const config: Configuration = {
   },
   devServer: {
     static: {
-      // changed from ./src/client
-      publicPath: '/build',
-      directory: path.resolve(__dirname, 'client'),
+      publicPath: '/',
+    //   directory: path.resolve(__dirname, 'client'),
     },
     historyApiFallback: true,
     proxy: [
       {
-        context: ['/'],
+        context: ['/api'],
         target: 'http://localhost:3000',
         changeOrigin: true,
       },
