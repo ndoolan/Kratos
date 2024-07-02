@@ -56,7 +56,7 @@ const config: Configuration = {
   devServer: {
     static: {
       publicPath: '/',
-      directory: path.resolve(__dirname, './client/assets'),
+      directory: path.resolve(__dirname, './src/client/assets'),
     },
     historyApiFallback: true,
     proxy: [
