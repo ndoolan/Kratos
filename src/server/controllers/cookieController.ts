@@ -6,6 +6,9 @@ interface cookieController {
   clearCookie: (req: Request, res: Response, next: NextFunction) => void;
 }
 
+// asyncReqHandler: (req: Request, res: Response, next: NextFunction) => void;
+// syncReqHandler: (req: Request, res: Response, next: NextFunction) => void;
+
 const cookieController: cookieController = {
   async setCookie(_req, res, next) {
     try {
